@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact | CMIONIX</title>
+<link rel="stylesheet" href="css/style.css" />
+<script defer src="js/main.js"></script>
+</head>
+<body>
+<header class="glass-header">
+  <img src="assets/cmionix-logo.png" class="logo" alt="CMIONIX Logo" />
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">&#9776;</label>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+</header>
+
+<section class="hero small-hero">
+  <h1>Contact CMIONIX</h1>
+  <p>Get in touch with us for collaborations, support, or project inquiries.</p>
+</section>
+
+<section class="services contact-services">
+  <h2>Send Us a Message</h2>
+  <form class="contact-form">
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+    </div>
+    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    <button type="submit" class="btn-primary">Send Message</button>
+    <div class="form-alert"></div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-watermark">CMIONIX</div>
+  <p>© 2025 CMIONIX · All rights reserved.</p>
+</footer>
+</body>
+</html>
