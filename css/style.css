@@ -301,7 +301,7 @@ button.disabled{
    ========================================= */
 
 body.home-page{
-  min-height:100vh;
+  min-height:105vh;
   display:flex;
   flex-direction:column;
 }
