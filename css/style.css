@@ -202,7 +202,7 @@ form.contact-form{
   display:flex;
   gap:.25rem;
   flex-wrap:wrap;
-  margin-bottom:.2rem;
+  margin-bottom:1rem;
 }
 input,textarea{
   width:100%;
