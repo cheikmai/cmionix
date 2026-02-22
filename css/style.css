@@ -301,8 +301,7 @@ button.disabled{
    ========================================= */
 
 body.home-page{
-  height:100vh;
-  overflow:hidden;
+  min-height:100vh;
   display:flex;
   flex-direction:column;
 }
