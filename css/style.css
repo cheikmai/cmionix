@@ -285,7 +285,7 @@ button.disabled{
    ========================================= */
 
 .hero.small-hero{
-  min-height:100vh;
+  min-height:100svh;
 }
 
 .hero.small-hero p{
