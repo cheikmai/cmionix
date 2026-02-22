@@ -21,7 +21,6 @@ body{
   color:var(--text);
   overflow-x:hidden;
   scroll-behavior:smooth;
-  padding-top:90px;
 }
 
 /* ========== HEADER ========== */
@@ -308,12 +307,11 @@ body.home-page{
 }
 
 body.home-page .hero{
-  min-height:45vh;
+  min-height:45vh;   /* reduced from 55vh */
   flex:1.8;
   display:flex;
   align-items:center;
   justify-content:center;
-  margin-top:80px;
 }
 
 body.home-page .services{
