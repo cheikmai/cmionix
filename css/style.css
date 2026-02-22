@@ -69,7 +69,7 @@ nav a.active::after{width:100%;}
   min-height:55vh;
   display:flex;flex-direction:column;
   justify-content:center;align-items:center;
-  text-align:center;padding:0 1rem;
+  text-align:center;padding:90px 1rem 0;
   background:radial-gradient(circle at 30% 30%,rgba(0,122,255,0.22),transparent 70%);
 }
 .hero h1{
