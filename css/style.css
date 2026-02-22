@@ -14,7 +14,7 @@
 }
 
 /* ========== GLOBAL RESET ========== */
-*{box-sizing:border-box;margin:0;padding:0;}
+*{box-sizing:border-box;margin:0.1;padding:0;}
 body{
   font-family:'Inter',sans-serif;
   background:linear-gradient(160deg,var(--bg1),var(--bg2));
@@ -25,7 +25,7 @@ body{
 
 /* ========== HEADER ========== */
 .glass-header{
-  position:fixed;top:0;bottom:1;width:100%;
+  position:fixed;top:0;width:100%;
   display:flex;justify-content:space-between;align-items:center;
   background:var(--glass);backdrop-filter:blur(10px);
   padding:1rem 2rem;border-bottom:1px solid rgba(255,255,255,.08);
