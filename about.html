@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>About CMIONIX | CMIONIX</title>
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <script defer src="js/main.js"></script>
+
+<style>
+.hero p {
+    max-width: 850px;
+    margin: 30px auto;
+    text-align: left;
+    line-height: 1.8;
+}
+
+/* Reduce extra hero spacing */
+.small-hero {
+    padding: 100px 20px 60px 20px;
+}
+
+/* Reduce footer height */
+footer {
+    padding: 30px 20px;
+}
+</style>
+
 </head>
 <body>
+
 <header class="glass-header">
   <img src="assets/logo.png" class="logo">
   <input type="checkbox" id="menu-toggle">
@@ -15,17 +37,19 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html" class="active">About</a>
-    <a href="projects.html" class="">Projects</a>
-    <a href="gallery.html" class="">Gallery</a>
-    <a href="contact.html" class="">Contact</a>
+    <a href="projects.html">Projects</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
 <section class="hero small-hero">
   <h1>About CMIONIX</h1>
-  <p>Engineering innovation through embedded intelligence.</p>
-</section>
 
-<footer><div class="footer-watermark">CMIONIX</div><p>© 2025 CMIONIX.</p></footer>
+  <p>
+    CMIONIX is an independent applied engineering and technical consulting initiative focused on embedded systems, control engineering, digital signal processing, and electronic hardware development. The work is aligned with ongoing doctoral research in electrical and computer engineering and centers on real-time systems, deterministic control implementation, and embedded signal processing. CMIONIX is open to non-defense consulting engagements, research collaborations, and early-stage product development support.
+  </p>
+
+</section>
 </body>
 </html>

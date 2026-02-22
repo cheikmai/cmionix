@@ -66,7 +66,7 @@ nav a.active::after{width:100%;}
 /* ========== HERO ========== */
 .hero{
   position:relative;
-  min-height:55vh;                /* reduced slightly from 60vh */
+  min-height:55vh;
   display:flex;flex-direction:column;
   justify-content:center;align-items:center;
   text-align:center;padding:0 1rem;
@@ -79,6 +79,12 @@ nav a.active::after{width:100%;}
   margin-bottom:1rem;
   text-shadow:0 0 12px rgba(0,224,255,.25);
 }
+
+.hero h2{
+  margin-bottom: .5rem;
+}
+
+
 .hero p{
   font-size:1.2rem;
   color:#b7c8e8;
@@ -109,7 +115,7 @@ nav a.active::after{width:100%;}
 
 /* ========== SERVICES (Core Expertise) ========== */
 .services{
-  padding:2.5rem 2rem 3rem;
+  padding:2.5rem 1rem 3rem;
   text-align:center;
 }
 .services h2{
@@ -121,7 +127,7 @@ nav a.active::after{width:100%;}
 .service-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:1.5rem;
+  gap:2rem;
 }
 .card{
   background:var(--glass);
@@ -151,9 +157,9 @@ nav a.active::after{width:100%;}
   background:var(--glass);
   border-radius:12px;
   display:flex;
-  align-items:center;
+  align-items:flex-start;
   justify-content:center;
-  border:1px solid rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,.06);
   transition:.4s;
   overflow:hidden;
 }
@@ -172,24 +178,24 @@ nav a.active::after{width:100%;}
 /* ========== CONTACT SECTION ========== */
 .contact-services{
   background:linear-gradient(160deg,var(--bg1),var(--bg2));
-  padding:1rem 1rem 1rem;      /* tighter for full-screen fit */
-  text-align:center;
+  padding:0rem 2rem 1rem;
+  text-align:top;
 }
 .contact-services h2{
   font-family:'Orbitron',sans-serif;
   color:var(--accent);
-  margin-bottom:0.5rem;
-  text-shadow:0 0 10px rgba(0,224,255,.25);
+  margin-bottom:.5rem;
+  text-shadow:0 0 10px rgba(0,224,255,10.25);
 }
 
 /* CONTACT FORM BOX */
 form.contact-form{
-  max-width:460px;                /* smaller width */
+  max-width:460px;
   margin:0 auto;
   background:var(--glass);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:10px;
-  padding:0.5rem 0.5rem 0.2rem;          /* reduced padding */
+  padding:0.5rem 0.5rem 0.2rem;
   box-shadow:0 0 15px rgba(0,224,255,0.08);
 }
 .contact-form .form-row{
@@ -210,7 +216,7 @@ input,textarea{
 textarea{
   resize:vertical;
   margin-bottom:.6rem;
-  height:85px;                    /* smaller height */
+  height:85px;
 }
 input::placeholder,textarea::placeholder{
   color:#b6c8d1;
@@ -239,8 +245,8 @@ button:hover{
 /* ========== FOOTER ========== */
 footer{
   text-align:center;
-  padding:3rem 1rem;
-  border-top:1px solid rgba(255,255,255,.05);
+  padding:0rem 0rem;
+  border-top:0px solid rgba(0,122,255,0.22);
   position:relative;
 }
 .footer-watermark{
@@ -248,15 +254,12 @@ footer{
   bottom:10px;right:15px;
   font-family:'Orbitron',sans-serif;
   font-size:3rem;
-  font-weight:700;
+  font-weight:00;
   color:rgba(255,255,255,.03);
   transform:rotate(-25deg);
 }
-footer.footer-home{padding:3rem 1rem;background:transparent;}
-footer.footer-about{padding:4rem 1rem;background:linear-gradient(180deg,var(--bg1),var(--bg2));}
-footer.footer-projects{padding:2.5rem 1rem;background:linear-gradient(180deg,#061425,#0b1c32);}
-footer.footer-gallery{padding:3rem 1rem;background:linear-gradient(180deg,#03101e,#071a2d);}
-footer.footer-contact{padding:3rem 1rem;background:linear-gradient(180deg,#041424,#0a2036);}
+footer.footer-home{padding:0rem 0rem;background:transparent;}
+
 
 /* ========== CONTACT BUTTON STATE ========== */
 .cmionix-spinner{
@@ -275,4 +278,48 @@ button.disabled{
   cursor:not-allowed;
   filter:brightness(.8);
   transition:opacity .3s ease;
+}
+
+/* =========================================
+   ABOUT PAGE ONLY — SAFE ADDITIONS
+   ========================================= */
+
+.hero.small-hero{
+  min-height:100vh;
+}
+
+.hero.small-hero p{
+  max-width:850px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:left;
+  line-height:1.8;
+}
+
+/* =========================================
+   HOMEPAGE PERFECT FULLSCREEN (NO SCROLL)
+   ========================================= */
+
+body.home-page{
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+body.home-page .hero{
+  min-height:45vh;   /* reduced from 55vh */
+  flex:1.8;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+body.home-page .services{
+  flex:1;
+  padding:2rem 0.5rem 0.5rem;   /* increased top padding */
+}
+
+body.home-page footer{
+  padding:1rem;
 }
