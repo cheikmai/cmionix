@@ -302,13 +302,14 @@ button.disabled{
    ========================================= */
 
 body.home-page{
-  height:100vh;
+  min-height:100vh;
   overflow:hidden;
   display:flex;
   flex-direction:column;
 }
 
 body.home-page .hero{
+  min-height:100vh;   /* reduced from 55vh */
   flex:1.8;
   display:flex;
   align-items:center;
