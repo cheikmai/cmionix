@@ -11,6 +11,7 @@
   --primary:#007aff;
   --text:#e8e8e8;
   --glass:rgba(255,255,255,0.04);
+  --header-h:72px;
 }
 
 /* ========== GLOBAL RESET ========== */
@@ -54,9 +55,20 @@ nav a.active::after{width:100%;}
 #menu-toggle{display:none;}
 .menu-icon{display:none;font-size:1.8rem;cursor:pointer;color:var(--text);}
 @media(max-width:768px){
+  :root{--header-h:64px;}
+
+  body{
+    padding-top:calc(var(--header-h) + env(safe-area-inset-top));
+  }
+
+  .glass-header{
+    padding:0.75rem 1rem;
+    padding-top:calc(0.75rem + env(safe-area-inset-top));
+  }
+
   nav{
     position:absolute;
-    top:70px;left:0;right:0;
+    top:calc(var(--header-h) + env(safe-area-inset-top));left:0;right:0;
     background:rgba(0,0,0,0.9);
     flex-direction:column;align-items:center;
     max-height:0;overflow:hidden;
@@ -330,9 +342,8 @@ body.home-page .services{
 body.home-page footer{
   padding:1rem;
 }
-<<<<<<< HEAD
 
-/* Mobile: always allow natural flow + scrolling */
+/* Mobile: natural flow + scrolling (homepage can scroll) */
 @media (max-width:768px){
   body.home-page{display:block;}
   body.home-page{overflow-y:auto;}
@@ -344,25 +355,17 @@ body.home-page footer{
 @media (min-width:769px){
   body.home-page{
     height:100vh;
-    overflow-y:hidden;
+    overflow:hidden;
   }
   @supports (height: 100svh){
     body.home-page{height:100svh;}
   }
 
-  body.home-page .hero{
-    min-height:0;
-  }
-  body.home-page .hero p{
-    margin-bottom:1.2rem;
-  }
+  body.home-page .hero{min-height:0;}
+  body.home-page .hero p{margin-bottom:1.2rem;}
 
-  body.home-page .services{
-    padding:1.25rem 1.5rem 0.5rem;
-  }
-  body.home-page .services h2{
-    margin-bottom:1rem;
-  }
+  body.home-page .services{padding:1.25rem 1.5rem 0.5rem;}
+  body.home-page .services h2{margin-bottom:1rem;}
   body.home-page .service-grid{
     grid-template-columns:repeat(4,minmax(0,1fr));
     gap:1.25rem;
@@ -370,16 +373,9 @@ body.home-page footer{
     margin-left:auto;
     margin-right:auto;
   }
-  body.home-page .card{
-    padding:1.25rem;
-  }
-  body.home-page footer{
-    padding:0.75rem;
-  }
-  body.home-page .footer-watermark{
-    bottom:6px;
-    right:12px;
-  }
+  body.home-page .card{padding:1.25rem;}
+  body.home-page footer{padding:0.75rem;}
+  body.home-page .footer-watermark{bottom:6px;right:12px;}
 }
 
 /* Short laptop heights: tighten slightly to avoid overflow */
@@ -390,5 +386,3 @@ body.home-page footer{
   body.home-page footer{padding:0.5rem;}
   body.home-page .footer-watermark{font-size:2.5rem;}
 }
-=======
->>>>>>> a5f1e6add77e0b8113b1c5926e2098809d9bb78f
