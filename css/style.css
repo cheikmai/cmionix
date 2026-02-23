@@ -338,6 +338,7 @@ button.disabled{
 
 .hero.small-hero p{
   max-width:850px;
+  margin:30px auto;
   margin-left:auto;
   margin-right:auto;
   text-align:left;
