@@ -19,7 +19,7 @@
 html,body{height:100%;}
 body{
   font-family:'Inter',sans-serif;
-  background:linear-gradient(160deg,var(--bg1),var(--bg2));
+  background:var(--bg2);
   color:var(--text);
   overflow-x:hidden;
   overflow-y:auto;
@@ -55,20 +55,20 @@ nav a.active::after{width:100%;}
 #menu-toggle{display:none;}
 .menu-icon{display:none;font-size:1.8rem;cursor:pointer;color:var(--text);}
 @media(max-width:768px){
-  :root{--header-h:64px;}
-
-  body{
-    padding-top:calc(var(--header-h) + env(safe-area-inset-top));
-  }
+  body{padding-top:0;}
 
   .glass-header{
-    padding:0.75rem 1rem;
-    padding-top:calc(0.75rem + env(safe-area-inset-top));
+    position:sticky;
+    top:0;
+    padding:0.65rem 1rem;
+    padding-top:calc(0.65rem + env(safe-area-inset-top));
   }
+
+  .logo{height:40px;}
 
   nav{
     position:absolute;
-    top:calc(var(--header-h) + env(safe-area-inset-top));left:0;right:0;
+    top:100%;left:0;right:0;
     background:rgba(0,0,0,0.9);
     flex-direction:column;align-items:center;
     max-height:0;overflow:hidden;
@@ -85,7 +85,7 @@ nav a.active::after{width:100%;}
   display:flex;flex-direction:column;
   justify-content:center;align-items:center;
   text-align:center;padding:0 1rem;
-  background:radial-gradient(circle at 30% 30%,rgba(0,122,255,0.22),transparent 0%);
+  background:transparent;
 }
 .hero h1{
   font-family:'Orbitron',sans-serif;
@@ -121,11 +121,7 @@ nav a.active::after{width:100%;}
   transform:translateY(-2px);
 }
 .hero::after{
-  content:'';
-  position:absolute;
-  bottom:0;left:0;width:100%;height:100px;
-  background:linear-gradient(to bottom,transparent,var(--bg2));
-  pointer-events:none;z-index:2;
+  display:none;
 }
 
 /* ========== SERVICES (Core Expertise) ========== */
@@ -156,6 +152,12 @@ nav a.active::after{width:100%;}
   box-shadow:0 0 22px rgba(0,224,255,.25);
 }
 .card h3{color:var(--accent);margin-bottom:.7rem;}
+
+/* Core Expertise card body text */
+.services .card p{
+  color:#b7c8e8;
+  line-height:1.6;
+}
 
 /* ========== ABOUT / PROJECTS / GALLERY ========== */
 .about-section,.projects-section{
@@ -301,7 +303,37 @@ button.disabled{
    ========================================= */
 
 .hero.small-hero{
-  min-height:100vh;
+  min-height:auto;
+  justify-content:flex-start;
+  padding:2.25rem 1rem 3rem;
+}
+
+/* Contact page: add a bit more breathing room at the top */
+.contact-page .hero.small-hero{
+  padding-top:2.25rem;
+}
+
+.contact-page .hero.small-hero h1{
+  margin-bottom:1.75rem;
+}
+
+/* Contact page: move h2 + form down together */
+.contact-page .contact-message-block{
+  padding-top:0.75rem;
+}
+
+@media (min-width:769px){
+  body:not(.home-page){
+    padding-top:var(--header-h);
+  }
+
+  .hero.small-hero{
+    padding-top:1.75rem;
+  }
+
+  .contact-page .hero.small-hero{
+    padding-top:1.75rem;
+  }
 }
 
 .hero.small-hero p{
@@ -318,6 +350,7 @@ button.disabled{
 
 body.home-page{
   min-height:100vh;
+  background:var(--bg2);
   display:flex;
   flex-direction:column;
 }
@@ -332,7 +365,10 @@ body.home-page .hero{
   display:flex;
   align-items:center;
   justify-content:center;
+  background:transparent;
 }
+
+body.home-page .hero::after{display:none;}
 
 body.home-page .services{
   flex:1;
@@ -364,16 +400,17 @@ body.home-page footer{
   body.home-page .hero{min-height:0;}
   body.home-page .hero p{margin-bottom:1.2rem;}
 
-  body.home-page .services{padding:1.25rem 1.5rem 0.5rem;}
+  body.home-page .services{padding:1.25rem 1rem 0.5rem;}
   body.home-page .services h2{margin-bottom:1rem;}
   body.home-page .service-grid{
     grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:1.25rem;
-    max-width:1200px;
+    gap:1rem;
+    width:100%;
+    max-width:1400px;
     margin-left:auto;
     margin-right:auto;
   }
-  body.home-page .card{padding:1.25rem;}
+  body.home-page .card{padding:1.15rem;}
   body.home-page footer{padding:0.75rem;}
   body.home-page .footer-watermark{bottom:6px;right:12px;}
 }
