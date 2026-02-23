@@ -330,6 +330,7 @@ body.home-page .services{
 body.home-page footer{
   padding:1rem;
 }
+<<<<<<< HEAD
 
 /* Mobile: always allow natural flow + scrolling */
 @media (max-width:768px){
@@ -389,3 +390,5 @@ body.home-page footer{
   body.home-page footer{padding:0.5rem;}
   body.home-page .footer-watermark{font-size:2.5rem;}
 }
+=======
+>>>>>>> a5f1e6add77e0b8113b1c5926e2098809d9bb78f
