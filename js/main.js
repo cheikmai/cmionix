@@ -2,43 +2,59 @@
 // CMIONIX CONTACT FORM (EmailJS + Glow + Spinner + Fade + Slide + Lock)
 // ======================================================
 
-emailjs.init("YOUR_PUBLIC_KEY"); // replace later
+(() => {
+  if (!window.emailjs) return;
 
-const contactForm = document.getElementById("contact-form");
-if (contactForm) {
+  window.emailjs.init("YOUR_PUBLIC_KEY"); // replace later
+
+  const contactForm =
+    document.getElementById("contact-form") ||
+    document.querySelector("form.contact-form");
+  if (!contactForm) return;
+
   const sendButton = contactForm.querySelector("button[type='submit']");
 
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
     const alertBox = this.querySelector(".form-alert");
 
-    const name = this.user_name.value.trim();
-    const email = this.user_email.value.trim();
-    const message = this.message.value.trim();
+    const nameField =
+      this.querySelector('[name="user_name"]') ||
+      this.querySelector('[name="name"]');
+    const emailField =
+      this.querySelector('[name="user_email"]') ||
+      this.querySelector('[name="email"]');
+    const messageField = this.querySelector('[name="message"]');
+
+    const name = (nameField?.value || "").trim();
+    const email = (emailField?.value || "").trim();
+    const message = (messageField?.value || "").trim();
 
     if (!name || !email || !message) {
       showAlert(alertBox, "⚠️ Please fill in all fields.", "#ff4f4f");
       return;
     }
 
-    sendButton.disabled = true;
-    sendButton.classList.add("disabled");
+    if (sendButton) {
+      sendButton.disabled = true;
+      sendButton.classList.add("disabled");
+    }
     showAlert(alertBox, "Sending...", "#00e0ff", true);
 
-    emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(
+    window.emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", this).then(
       () => {
         showAlert(alertBox, "✅ Message sent successfully!", "#00e0ff");
         this.reset();
-        restoreButton(sendButton);
+        if (sendButton) restoreButton(sendButton);
       },
       (error) => {
         console.error("EmailJS error:", error);
         showAlert(alertBox, "❌ Error sending message. Please try again.", "#ff4f4f");
-        restoreButton(sendButton);
+        if (sendButton) restoreButton(sendButton);
       }
     );
   });
-}
+})();
 
 function showAlert(element, text, color, showSpinner = false) {
   element.innerHTML = "";
