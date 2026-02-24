@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500&display=swap');
 
-/* ==============================
-   CMIONIX 2025 – FINAL STYLE
-   ============================== */
-
 :root{
   --bg1:#03101e;
   --bg2:#0b1c32;
@@ -13,8 +9,6 @@
   --glass:rgba(255,255,255,0.04);
   --header-h:72px;
 }
-
-/* ========== GLOBAL RESET ========== */
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{height:100%;}
 body{
@@ -26,8 +20,6 @@ body{
   -webkit-overflow-scrolling:touch;
   scroll-behavior:smooth;
 }
-
-/* ========== HEADER ========== */
 .glass-header{
   position:fixed;top:0;width:100%;
   display:flex;justify-content:space-between;align-items:center;
@@ -77,8 +69,6 @@ nav a.active::after{width:100%;}
   #menu-toggle:checked+label+nav{max-height:300px;padding:1rem 0;}
   .menu-icon{display:block;}
 }
-
-/* ========== HERO ========== */
 .hero{
   position:relative;
   min-height:55vh;
@@ -123,8 +113,6 @@ nav a.active::after{width:100%;}
 .hero::after{
   display:none;
 }
-
-/* ========== SERVICES (Core Expertise) ========== */
 .services{
   padding:2.5rem 1rem 3rem;
   text-align:center;
@@ -152,14 +140,10 @@ nav a.active::after{width:100%;}
   box-shadow:0 0 22px rgba(0,224,255,.25);
 }
 .card h3{color:var(--accent);margin-bottom:.7rem;}
-
-/* Core Expertise card body text */
 .services .card p{
   color:#b7c8e8;
   line-height:1.6;
 }
-
-/* ========== ABOUT / PROJECTS / GALLERY ========== */
 .about-section,.projects-section{
   padding:4rem 2rem;
   text-align:center;
@@ -191,8 +175,6 @@ nav a.active::after{width:100%;}
   transform:scale(1.05);
   opacity:1;
 }
-
-/* ========== CONTACT SECTION ========== */
 .contact-services{
   background:linear-gradient(160deg,var(--bg1),var(--bg2));
   padding:0rem 2rem 1rem;
@@ -204,8 +186,6 @@ nav a.active::after{width:100%;}
   margin-bottom:.5rem;
   text-shadow:0 0 10px rgba(0,224,255,10.25);
 }
-
-/* CONTACT FORM BOX */
 form.contact-form{
   max-width:460px;
   margin:0 auto;
@@ -215,6 +195,56 @@ form.contact-form{
   border-radius:10px;
   padding:0.5rem 0.5rem 0.2rem;
   box-shadow:0 0 15px rgba(0,224,255,0.08);
+}
+
+.contact-alt{
+  max-width:460px;
+  margin:0.9rem auto 0;
+  display:flex;
+  justify-content:center;
+}
+
+.contact-note{
+  max-width:460px;
+  margin:0.8rem auto 0;
+  text-align:center;
+  color:#b7c8e8;
+  opacity:0.9;
+  line-height:1.5;
+}
+
+.btn-linkedin{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.6rem;
+  border-color:rgba(0,224,255,0.65);
+  color:#b7c8e8;
+  background:rgba(0,224,255,0.06);
+}
+
+.btn-linkedin:hover{
+  color:var(--accent);
+}
+
+.li-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:1.55rem;
+  height:1.55rem;
+  border:2px solid rgba(0,224,255,0.65);
+  border-radius:6px;
+  font-family:'Orbitron',sans-serif;
+  font-size:0.85rem;
+  font-weight:700;
+  line-height:1;
+  color:var(--accent);
+  background:rgba(0,224,255,0.08);
+}
+
+.btn-linkedin:hover .li-badge{
+  border-color:var(--accent);
 }
 .contact-form .form-row{
   display:flex;
@@ -255,12 +285,10 @@ button:hover{
 }
 .form-alert{
   text-align:center;
-  margin-top:1rem;
+  margin-top:0.5rem;
   font-weight:600;
-  min-height:1.2em;
+  min-height:0.9em;
 }
-
-/* ========== FOOTER ========== */
 footer{
   text-align:center;
   padding:0rem 0rem;
@@ -277,9 +305,6 @@ footer{
   transform:rotate(-25deg);
 }
 footer.footer-home{padding:0rem 0rem;background:transparent;}
-
-
-/* ========== CONTACT BUTTON STATE ========== */
 .cmionix-spinner{
   display:inline-block;
   width:1em;height:1em;
@@ -298,17 +323,11 @@ button.disabled{
   transition:opacity .3s ease;
 }
 
-/* =========================================
-   ABOUT PAGE ONLY — SAFE ADDITIONS
-   ========================================= */
-
 .hero.small-hero{
   min-height:auto;
   justify-content:flex-start;
   padding:2.25rem 1rem 3rem;
 }
-
-/* Contact page: add a bit more breathing room at the top */
 .contact-page .hero.small-hero{
   padding-top:2.25rem;
 }
@@ -316,8 +335,6 @@ button.disabled{
 .contact-page .hero.small-hero h1{
   margin-bottom:1.75rem;
 }
-
-/* Contact page: move h2 + form down together */
 .contact-page .contact-message-block{
   padding-top:0.75rem;
 }
@@ -345,10 +362,6 @@ button.disabled{
   line-height:1.8;
 }
 
-/* =========================================
-   HOMEPAGE PERFECT FULLSCREEN (NO SCROLL)
-   ========================================= */
-
 body.home-page{
   min-height:100vh;
   background:var(--bg2);
@@ -361,7 +374,7 @@ body.home-page{
 }
 
 body.home-page .hero{
-  min-height:45vh;   /* reduced from 55vh */
+  min-height:45vh;
   flex:1.8;
   display:flex;
   align-items:center;
@@ -373,22 +386,18 @@ body.home-page .hero::after{display:none;}
 
 body.home-page .services{
   flex:1;
-  padding:2rem 0.5rem 0.5rem;   /* increased top padding */
+  padding:2rem 0.5rem 0.5rem;
 }
 
 body.home-page footer{
   padding:1rem;
 }
-
-/* Mobile: natural flow + scrolling (homepage can scroll) */
 @media (max-width:768px){
   body.home-page{display:block;}
   body.home-page{overflow-y:auto;}
   body.home-page .hero{flex:none;min-height:55vh;}
   body.home-page .services{flex:none;padding:2.5rem 1rem 3rem;}
 }
-
-/* Desktop: strict one-screen homepage (no scrollbar) */
 @media (min-width:769px){
   body.home-page{
     height:100vh;
@@ -415,8 +424,6 @@ body.home-page footer{
   body.home-page footer{padding:0.75rem;}
   body.home-page .footer-watermark{bottom:6px;right:12px;}
 }
-
-/* Short laptop heights: tighten slightly to avoid overflow */
 @media (min-width:769px) and (max-height:800px){
   body.home-page .services{padding:1rem 1.25rem 0.25rem;}
   body.home-page .service-grid{gap:1rem;}

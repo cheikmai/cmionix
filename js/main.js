@@ -1,11 +1,7 @@
-// ======================================================
-// CMIONIX CONTACT FORM (EmailJS + Glow + Spinner + Fade + Slide + Lock)
-// ======================================================
-
 (() => {
   if (!window.emailjs) return;
 
-  window.emailjs.init("YOUR_PUBLIC_KEY"); // replace later
+  window.emailjs.init("YOUR_PUBLIC_KEY");
 
   const contactForm =
     document.getElementById("contact-form") ||
